@@ -1,0 +1,31 @@
+a {
+    transition:
+        height 0.25s ease-in,
+        width 0.25s ease-in;
+
+    &#github-link::after {
+        content: 'Github';
+    }
+
+    &#instagram-link::after {
+        content: 'Instagram';
+    }
+
+    &::after {
+        padding: .25em .45em ;
+        color: white;
+        font-size: 0;
+        font-family: 'ChironGoRoundTC', sans-serif;
+        font-weight: 700;
+        position: absolute;
+        left: 50%;
+        background-color: black;
+        border-radius: .45em;
+        transform: translate(-50%, .65em);
+        transition: font-size 0.25s ease-in;
+    }
+
+    &:hover::after {
+        font-size: inherit;
+    }
+}
