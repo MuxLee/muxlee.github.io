@@ -18,7 +18,12 @@
         "target": "ES2022",
         "module": "ES2022",
         "paths": {
-            "@app/app.component": ["./src/app/app.component"]
+            "@app/app.component": ["./src/app/app.component"],
+            "@app/app.config": ["./src/app/app.config"],
+            "@app/app.routes": ["./src/app/app.routes"],
+            "@environments/*": ["./src/environments/*"],
+            "@page/*": ["./src/app/page/*"],
+            "@semantic/*": ["./src/app/semantic/*"]
         }
     },
     "angularCompilerOptions": {
