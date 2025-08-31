@@ -21,7 +21,9 @@
             "@app/app.component": ["./src/app/app.component"],
             "@app/app.config": ["./src/app/app.config"],
             "@app/app.routes": ["./src/app/app.routes"],
+            "@component/*": ["./src/app/component/*"],
             "@environments/*": ["./src/environments/*"],
+            "@model/*": ["./src/app/model/*"],
             "@page/*": ["./src/app/page/*"],
             "@semantic/*": ["./src/app/semantic/*"]
         }
