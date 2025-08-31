@@ -1,4 +1,4 @@
-import { FilePath } from '@domain/metadata';
+import { FilePath } from '@model/metadata';
 
 /**
  * 썸네일 정보를 관리하는 인터페이스입니다.

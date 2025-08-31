@@ -1,5 +1,5 @@
-import { FilePath, ISODateTime } from '@domain/metadata';
-import { Thumbnail } from '@domain/thumbnail';
+import { FilePath, ISODateTime } from '@model/metadata';
+import { Thumbnail } from '@model/thumbnail';
 
 /**
  * 게시글 정보를 관리하는 인터페이스입니다.

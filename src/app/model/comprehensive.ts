@@ -1,7 +1,7 @@
-import { Category } from './category';
-import { Optional } from './metadata';
-import { Page } from './page';
-import { Post } from './post';
+import { Category } from '@model/category';
+import { Optional } from '@model//metadata';
+import { Page } from '@model/page';
+import { Post } from '@model/post';
 
 type ReadonlyCategoryMap = ReadonlyMap<string, Category>;
 type ReadonlyCategorySet = ReadonlySet<string>;

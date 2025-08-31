@@ -1,5 +1,5 @@
-import { FilePath } from '@domain/metadata';
-import { Post } from '@domain/post';
+import { FilePath } from '@model/metadata';
+import { Post } from '@model/post';
 
 type ReadonlyPostArray = ReadonlyArray<Post>;
 

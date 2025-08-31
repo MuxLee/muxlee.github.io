@@ -1,4 +1,4 @@
-import { FilePath } from '@domain/metadata';
+import { FilePath } from '@model/metadata';
 
 type ReadonlyFilePathArray = ReadonlyArray<FilePath>;
 

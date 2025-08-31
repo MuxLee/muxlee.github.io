@@ -57,10 +57,19 @@ interface JSONSerializer<T> {
 
 }
 
+/**
+ * 대상 타입 또는 <code>null</code> 타입
+ */
 type Optional<T> = T | null;
 
+/**
+ * 읽기 전용의 {@link FilePath}
+ */
 type ReadonlyFilePath = Readonly<FilePath>;
 
+/**
+ * 상위 및 자식 요소에 대한 읽기 전용 타입
+ */
 type ReadonlyNested<T> = {
     readonly [key in keyof T]: T[key] extends object ? ReadonlyNested<T[key]> : T[key];
 };
