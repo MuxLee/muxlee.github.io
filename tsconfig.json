@@ -25,7 +25,8 @@
             "@environments/*": ["./src/environments/*"],
             "@model/*": ["./src/app/model/*"],
             "@page/*": ["./src/app/page/*"],
-            "@semantic/*": ["./src/app/semantic/*"]
+            "@semantic/*": ["./src/app/semantic/*"],
+            "@service/*": ["./src/app/service/*"]
         }
     },
     "angularCompilerOptions": {
