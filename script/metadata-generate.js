@@ -1,6 +1,7 @@
 import fileSystem from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import * as uuid from 'uuid';
 
 import {
     LocalComprehensive,
@@ -45,6 +46,8 @@ function generate() {
         }
 
         ignoreGeneratePostFile(localPost);
+
+        console.log(`생성 완료된 게시글 파일 : ${localPost.fileName}`);
 
         localPage.addPost = localPost;
 
@@ -132,8 +135,8 @@ function generatePageFile(page) {
  * @returns {void}
  */
 function ignoreGeneratePostFile(localPost) {
-    const postFilePath = path.join(projectPath, localPost.folderPath, localPost.generateFileName);
-    const newPostFilePath = path.join(projectPath, localPost.fullPath);
+    const postFilePath = path.join(projectPath, localPost.generateFullPath);
+    const newPostFilePath = path.join(localPost.fullPath);
 
     fileSystem.renameSync(postFilePath, newPostFilePath);
 }
@@ -203,23 +206,23 @@ function loadPosts() {
      * @type {LocalPost[]}
      */
     const posts = [];
-    const postDirectoryPath = path.join(contentPath, 'post');
-    const hasContentDirectory = fileSystem.existsSync(postDirectoryPath);
+    const hasContentDirectory = fileSystem.existsSync(contentPath);
 
     if (hasContentDirectory) {
-        const fileNames = fileSystem.readdirSync(postDirectoryPath);
+        const fileNames = fileSystem.readdirSync(contentPath);
 
         for (const fileName of fileNames) {
             const isMarkdownFile = fileName.endsWith('.generate.md');
 
             if (isMarkdownFile) {
-                const postFilePath = path.join(postDirectoryPath, fileName);
+                const postFilePath = path.join(contentPath, fileName);
                 const postFile = fileSystem.readFileSync(postFilePath, 'utf8');
                 const post = extractMetadata(postFile);
 
                 if (post) {
-                    const folderPath = postDirectoryPath.replace(projectPath, '');
-                    const newFileName = fileName.replace('.generate', '');
+                    const folderPath = postFolderPath.replace(projectPath, '');
+                    const generateFolderPath = contentPath.replace(projectPath, '');
+                    const newFileName = uuid.v7() + '.md';
 
                     Object.defineProperties(post, {
                         fileName: {
@@ -230,6 +233,9 @@ function loadPosts() {
                         },
                         generateFileName: {
                             value: fileName,
+                        },
+                        generateFolderPath: {
+                            value: generateFolderPath
                         },
                         thumbnail: {
                             value: new LocalThumbnail(post.thumbnail)
