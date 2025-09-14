@@ -25,6 +25,7 @@
             "@environments/*": ["./src/environments/*"],
             "@model/*": ["./src/app/model/*"],
             "@page/*": ["./src/app/page/*"],
+            "@pipe/*": [".src/app/pipe/*"],
             "@semantic/*": ["./src/app/semantic/*"],
             "@service/*": ["./src/app/service/*"]
         }
