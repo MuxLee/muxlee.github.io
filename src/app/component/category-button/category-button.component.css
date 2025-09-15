@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+
+:host {
+    @apply inline-block bg-amber-100 px-2 py-1 rounded-[.65em];
+}
