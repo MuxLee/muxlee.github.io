@@ -1,3 +1,4 @@
+import type { FileContext } from '@script/context/context';
 import type { Tuple } from '@script/util/util';
 
 /**
