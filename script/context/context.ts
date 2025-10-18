@@ -1,7 +1,6 @@
 import path from 'path';
 
-import { BlobGrant } from '@script/blob/blob';
-import { nestedFreeze } from '../util/util.js';
+import type { BlobGrant } from '@script/blob/blob';
 
 /**
  * 정보 인터페이스
