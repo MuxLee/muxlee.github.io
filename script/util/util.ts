@@ -407,6 +407,7 @@ export type {
     Constructor,
     ConsturctorInstanceTuple,
     ConsturctorTuple,
+    Nullable,
     PrimitiveType,
     SingleClassInstance,
     Supplier,
