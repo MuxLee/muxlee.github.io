@@ -216,6 +216,10 @@ class LocalComprehensive {
             fileName: {
                 enumerable: true,
                 value: filePath.fileName
+            },
+            fullPath: {
+                enumerable: true,
+                value: filePath.fullPath
             }
         });
 
@@ -253,21 +257,21 @@ class LocalComprehensive {
     /**
      * 최신 페이지 정보를 변경합니다.
      *
-     * @param {LocalPage} page 페이지 정보
+     * @param {LocalPage} localPost 페이지 정보
      * @returns {void}
      */
-    set updateLatestPage(page) {
-        this.#latestPage = page;
+    set updateLatestPage(localPost) {
+        this.#latestPage = localPost;
     }
 
     /**
      * 최신 게시글 정보를 변경합니다.
      *
-     * @param {Post} post 게시글 정보
+     * @param {LocalPost} localPost 게시글 정보
      * @returns {void}
      */
-    set updateLatestPost(post) {
-        this.#latestPost = post;
+    set updateLatestPost(localPost) {
+        this.#latestPost = localPost;
     }
 
     /**
@@ -734,6 +738,13 @@ class LocalPost {
     #generateFileName;
 
     /**
+     * 게시글 생성 폴더 경로
+     *
+     * @type {string}
+     */
+    #generateFolderPath;
+
+    /**
      * 게시글 요약 정보
      *
      * @type {string}
@@ -771,6 +782,7 @@ class LocalPost {
         this.#fileName = otherPost.fileName;
         this.#folderPath = otherPost.folderPath;
         this.#generateFileName = otherPost.generateFileName;
+        this.#generateFolderPath = otherPost.generateFolderPath;
         this.#summation = otherPost.summation;
         this.#thumbnail = otherPost.thumbnail;
         this.#title = otherPost.title;
@@ -820,6 +832,24 @@ class LocalPost {
      */
     get generateFileName() {
         return this.#generateFileName;
+    }
+
+    /**
+     * 게시글 생성 폴더 경로를 반환합니다.
+     *
+     * @returns {string} 게시글 생성 폴더 경로
+     */
+    get generateFolderPath() {
+        return this.#generateFolderPath;
+    }
+
+    /**
+     * 게시글 생성 파일의 전체 경로를 반환합니다.
+     *
+     * @returns {string} 게시글 생성 파일의 전체 경로
+     */
+    get generateFullPath() {
+        return path.join(this.#generateFolderPath, this.#generateFileName);
     }
 
     /**
