@@ -72,7 +72,7 @@ type MetadataOptionTypeContext = boolean | number | string;
  * @author Mux
  * @version 1.0.0
  */
-class _MetadataFileContextFactory<T, R> implements MetadataContextFactory<T, R> {
+abstract class AbstractMetadataFileContextFactory<T, R> implements MetadataContextFactory<T, R> {
 
     /**
      * 파일 정보 로더
@@ -83,7 +83,7 @@ class _MetadataFileContextFactory<T, R> implements MetadataContextFactory<T, R> 
     _fileContextLoader: FileContextLoader;
 
     /**
-     * {@link _MetadataFileContextFactory} 클래스의 생성자입니다.
+     * {@link AbstractMetadataFileContextFactory} 클래스의 생성자입니다.
      *
      * @param {FileContextLoader} fileContextLoader 파일 정보 로더
      */
@@ -137,11 +137,11 @@ class _MetadataFileContextFactory<T, R> implements MetadataContextFactory<T, R> 
 /**
  * 종합 파일 정보 생성기 클래스
  *
- * @extends {_MetadataFileContextFactory<unknown, FileContext>}
+ * @extends {AbstractMetadataFileContextFactory<unknown, FileContext>}
  * @author Mux
  * @version 1.0.0
  */
-class LocalComprehensiveFileContextFactory extends _MetadataFileContextFactory<unknown, FileContext> {
+class LocalComprehensiveFileContextFactory extends AbstractMetadataFileContextFactory<unknown, FileContext> {
 
     /**
      * {@link LocalComprehensiveFileContextFactory} 클래스의 생성자입니다.
@@ -191,11 +191,11 @@ class LocalComprehensiveFileContextFactory extends _MetadataFileContextFactory<u
 /**
  * 페이지 파일 정보 생성기 클래스
  *
- * @extends {_MetadataFileContextFactory<unknown, FileContext>}
+ * @extends {AbstractMetadataFileContextFactory<unknown, FileContext>}
  * @author Mux
  * @version 1.0.0
  */
-class LocalPageFileContextFactory extends _MetadataFileContextFactory<unknown, FileContext> {
+class LocalPageFileContextFactory extends AbstractMetadataFileContextFactory<unknown, FileContext> {
 
     /**
      * {@link LocalPageFileContextFactory} 클래스의 생성자입니다.
@@ -248,11 +248,11 @@ class LocalPageFileContextFactory extends _MetadataFileContextFactory<unknown, F
 /**
  * 게시글 파일 정보 생성기 클래스
  *
- * @extends {_MetadataFileContextFactory<unknown, FileContext>}
+ * @extends {AbstractMetadataFileContextFactory<unknown, FileContext>}
  * @author Mux
  * @version 1.0.0
  */
-class LocalPostFileContextFactory extends _MetadataFileContextFactory<unknown, FileContext> {
+class LocalPostFileContextFactory extends AbstractMetadataFileContextFactory<unknown, FileContext> {
 
     /**
      * {@link LocalPostFileContextFactory} 클래스의 생성자입니다.
@@ -305,11 +305,11 @@ class LocalPostFileContextFactory extends _MetadataFileContextFactory<unknown, F
 /**
  * 마크다운 파일 정보 생성기 클래스
  *
- * @extends {_MetadataFileContextFactory<unknown, FileContext[]>}
+ * @extends {AbstractMetadataFileContextFactory<unknown, FileContext[]>}
  * @author Mux
  * @version 1.0.0
  */
-class MarkdownFileContextFactory extends _MetadataFileContextFactory<unknown, FileContext[]> {
+class MarkdownFileContextFactory extends AbstractMetadataFileContextFactory<unknown, FileContext[]> {
 
     /**
      * 폴더 정보 로더
