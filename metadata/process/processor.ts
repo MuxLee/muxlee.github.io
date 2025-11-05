@@ -8,9 +8,10 @@ import * as uuid from 'uuid';
 
 import type { MetadataCommand, MetadataCommandParser } from '@metadata/command/command';
 import Metadatas from '@metadata/constant';
-import type { MetadataContexts, MetadataOptionTypeContext } from '@metadata/context/context';
+import type { MetadataContext, MetadataContexts, MetadataOptionTypeContext } from '@metadata/context/context';
 import { MetadataGlobalContext } from '@metadata/context/context';
 import type { MetadataCreatorChain } from '@metadata/creator/chain';
+import type { MetadataContentGenerator, MetadataFileGenerator } from '@metadata/generator/generator';
 import { LocalComprehensive, LocalPage, LocalPost } from '@metadata/model/model';
 import type { Processor } from '@script/process/processor';
 import { ObjectDefiners } from '@script/util/util';
@@ -226,7 +227,7 @@ class MetadataContentGenerateProcessor implements MetadataProcessor {
      * @returns {Promise<void>}
      */
     process(injector: Injector): Promise<void> {
-        const metadataContext = injector.get(Metadatas.GLOBAL_CONTEXT);
+        const metadataContext = injector.get<MetadataContext>(Metadatas.GLOBAL_CONTEXT);
         const metadataContentGenerators = injector.get<MetadataContentGenerator[]>('METADATA_CONTENT_GENERATORS');
 
         for (const metadataContentGenerator of metadataContentGenerators) {
@@ -254,7 +255,7 @@ class MetadataFileGeneratorProcessor implements MetadataProcessor {
      * @returns {Promise<void>}
      */
     async process(injector: Injector): Promise<void> {
-        const metadataContext = injector.get(Metadatas.GLOBAL_CONTEXT);
+        const metadataContext = injector.get<MetadataContext>(Metadatas.GLOBAL_CONTEXT);
         const metadataFileGenerators = injector.get<MetadataFileGenerator[]>('METADATA_FILE_GENERATORS');
 
         for (const metadataFileGenerator of metadataFileGenerators) {
