@@ -1,0 +1,32 @@
+import { Command } from 'commander';
+import { ArrayInjectionToken } from 'lightweight-injection/injection';
+import type { Injector } from 'lightweight-injection/injector';
+import { injectorConfig } from 'lightweight-injection/injector';
+
+import {
+    LocalComprehensiveCommand,
+    LocalComprehensiveCommandParser,
+    LocalPageCommand,
+    LocalPageCommandParser,
+    LocalPostCommand,
+    LocalPostCommandParser,
+    MetadataLoaderCommand,
+    MetadataLoaderCommandParser
+} from '@metadata/command/command';
+import Metadatas from '@metadata/constant';
+
+export default injectorConfig(function(injector: Injector) {
+    injector.create(Command);
+    injector.create(new ArrayInjectionToken(Metadatas.COMMAND_PARSERS, [
+        LocalComprehensiveCommandParser,
+        LocalPageCommandParser,
+        LocalPostCommandParser,
+        MetadataLoaderCommandParser
+    ]));
+    injector.create(new ArrayInjectionToken(Metadatas.COMMANDS, [
+        LocalComprehensiveCommand,
+        LocalPageCommand,
+        LocalPostCommand,
+        MetadataLoaderCommand
+    ]));
+}, '메타데이터 명령어 설정/추출 의존성');
