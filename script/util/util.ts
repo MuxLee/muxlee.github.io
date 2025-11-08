@@ -113,6 +113,37 @@ interface DefineStrategy {
 }
 
 /**
+ * 파일 경로 정보를 제공하는 인터페이스
+ * 
+ * @author Mux
+ * @version 1.0.0
+ */
+interface FilePath {
+
+    /**
+     * 파일명을 반환합니다.
+     *
+     * @returns {string} 파일명
+     */
+    get fileName(): string;
+
+    /**
+     * 폴더 경로를 반환합니다.
+     *
+     * @returns {string} 폴더 경로
+     */
+    get folderPath(): string;
+
+    /**
+     * 파일명을 포함한 전체 경로를 반환합니다.
+     *
+     * @returns {string} 전체 경로
+     */
+    get fullPath(): string;
+
+}
+
+/**
  * 비-배열 유형
  * 
  * @template T 개체 유형
@@ -408,6 +439,7 @@ export type {
     Constructor,
     ConsturctorInstanceTuple,
     ConsturctorTuple,
+    FilePath,
     Nullable,
     PrimitiveType,
     SingleClassInstance,
