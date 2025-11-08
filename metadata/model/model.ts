@@ -1,7 +1,7 @@
 import path from 'path';
 import * as uuid from 'uuid';
 
-import type { Nullable } from '@script/util/util';
+import type { FilePath, Nullable } from '@script/util/util';
 import { ObjectDefiners, nestedFreeze } from '@script/util/util';
 
 /**
@@ -98,37 +98,6 @@ interface Comprehensive {
      * @returns {number} 게시글 개수
      */
     get postCount(): number;
-
-}
-
-/**
- * 파일 경로 정보를 제공하는 인터페이스
- * 
- * @author Mux
- * @version 1.0.0
- */
-interface FilePath {
-
-    /**
-     * 파일명을 반환합니다.
-     *
-     * @returns {string} 파일명
-     */
-    get fileName(): string;
-
-    /**
-     * 폴더 경로를 반환합니다.
-     *
-     * @returns {string} 폴더 경로
-     */
-    get folderPath(): string;
-
-    /**
-     * 파일명을 포함한 전체 경로를 반환합니다.
-     *
-     * @returns {string} 전체 경로
-     */
-    get fullPath(): string;
 
 }
 

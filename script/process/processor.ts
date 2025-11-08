@@ -6,7 +6,7 @@
  * @author Mux
  * @version 1.0.0
  */
-declare interface Processor<T, R> {
+interface Processor<T, R> {
 
     /**
      * 작업을 수행하여 반환합니다.
