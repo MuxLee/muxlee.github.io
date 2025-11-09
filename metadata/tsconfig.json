@@ -1,9 +1,16 @@
 {
     "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "../",
+        "esModuleInterop": true,
+        "module": "node16",
+        "moduleResolution": "node16",
+        "noEmit": true,
         "paths": {
-            "@metadata/*": ["./*"],
-            "@script/*": ["../script/*"]
-        }
-    },
-    "extends": "../tsconfig.json"
+            "@metadata/*": ["metadata/*"],
+            "@script/*": ["script/*"]
+        },
+        "strict": true,
+        "target": "esnext"
+    }
 }

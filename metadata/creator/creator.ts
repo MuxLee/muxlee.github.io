@@ -1,11 +1,11 @@
-import type { MetadataContext, MetadataContextFactory } from '@metadata/context/context';
-import type { MetadataCreatorChain } from '@metadata/creator/chain';
-import type { MetadataCreatePostProcessor } from '@metadata/process/processor';
-import type { FileDataPair } from '@script/collection/collection';
-import { SimplePair, TuplePair } from '@script/collection/collection';
-import type { FileContext } from '@script/context/context';
-import type { FileLoader } from '@script/loader/loader';
-import type { Deserializer } from '@script/serialize/serializer';
+import type { MetadataContext, MetadataContextFactory } from '@metadata/context/context.js';
+import type { MetadataCreatorChain } from '@metadata/creator/chain.js';
+import type { MetadataCreatePostProcessor } from '@metadata/process/processor.js';
+import type { FileDataPair } from '@script/collection/collection.js';
+import { SimplePair, TuplePair } from '@script/collection/collection.js';
+import type { FileContext } from '@script/context/context.js';
+import type { FileLoader } from '@script/loader/loader.js';
+import type { Deserializer } from '@script/serialize/serializer.js';
 
 /**
  * 메타데이터 생성기 인터페이스

@@ -12,8 +12,8 @@ import {
     LocalPostCommandParser,
     MetadataLoaderCommand,
     MetadataLoaderCommandParser
-} from '@metadata/command/command';
-import Metadatas from '@metadata/constant';
+} from '@metadata/command/command.js';
+import Metadatas from '@metadata/constant.js';
 
 export default injectorConfig(function(injector: Injector) {
     injector.create(Command);

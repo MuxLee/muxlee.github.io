@@ -9,9 +9,9 @@ import {
     LocalPageFileGenerator,
     LocalPostContentGenerator,
     LocalPostFileGenerator
-} from '@metadata/generator/generator';
-import type { Comprehensive, Page } from '@metadata/model/model';
-import type { Serializer } from '@script/serialize/serializer';
+} from '@metadata/generator/generator.js';
+import type { Comprehensive, Page } from '@metadata/model/model.js';
+import type { Serializer } from '@script/serialize/serializer.js';
 
 export default injectorConfig(function(injector: Injector) {
     injector.create(new ArrayInjectionToken('METADATA_CONTENT_GENERATORS', [

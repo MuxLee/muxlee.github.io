@@ -2,13 +2,13 @@ import fileSystem from 'fs';
 import type { Injector } from 'lightweight-injection/injector';
 import path from 'path';
 
-import Metadatas from '@metadata/constant';
-import type { MetadataContext, MetadataOptionTypeContext } from '@metadata/context/context';
-import { MetadataGlobalContext } from '@metadata/context/context';
-import type { Comprehensive, Page } from '@metadata/model/model';
-import { LocalComprehensive, LocalPage } from '@metadata/model/model';
-import type { Serializer } from '@script/serialize/serializer';
-import { onlyFilePath } from '@script/util/util';
+import Metadatas from '@metadata/constant.js';
+import type { MetadataContext, MetadataOptionTypeContext } from '@metadata/context/context.js';
+import { MetadataGlobalContext } from '@metadata/context/context.js';
+import type { Comprehensive, Page } from '@metadata/model/model.js';
+import { LocalComprehensive, LocalPage } from '@metadata/model/model.js';
+import type { Serializer } from '@script/serialize/serializer.js';
+import { onlyFilePath } from '@script/util/util.js';
 
 /**
  * 메타데이터 내용 생성기 인터페이스

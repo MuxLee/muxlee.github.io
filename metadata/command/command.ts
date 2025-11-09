@@ -1,7 +1,7 @@
 import type { OptionValues } from 'commander';
 import { Command } from 'commander';
 
-import { ObjectDefiners } from '@script/util/util';
+import { ObjectDefiners } from '@script/util/util.js';
 
 /**
  * 메타데이터 명령어 인터페이스

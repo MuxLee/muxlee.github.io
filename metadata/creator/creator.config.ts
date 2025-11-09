@@ -2,12 +2,12 @@ import { TupleFactoryInjectionToken } from 'lightweight-injection/injection';
 import type { Injector } from 'lightweight-injection/injector';
 import { injectorConfig } from 'lightweight-injection/injector';
 
-import Metadatas from '@metadata/constant';
-import type { MetadataContextFactory } from '@metadata/context/context';
-import { MetadataContentCreator, MetadataContextCreator, MetadataObjectCreator } from '@metadata/creator/creator';
-import type { MetadataCreatePostProcessor } from '@metadata/process/processor';
-import type { FileLoader } from '@script/loader/loader';
-import type { Deserializer } from '@script/serialize/serializer';
+import Metadatas from '@metadata/constant.js';
+import type { MetadataContextFactory } from '@metadata/context/context.js';
+import { MetadataContentCreator, MetadataContextCreator, MetadataObjectCreator } from '@metadata/creator/creator.js';
+import type { MetadataCreatePostProcessor } from '@metadata/process/processor.js';
+import type { FileLoader } from '@script/loader/loader.js';
+import type { Deserializer } from '@script/serialize/serializer.js';
 
 /**
  * 메타데이터 내용 생성기를 반환합니다.
