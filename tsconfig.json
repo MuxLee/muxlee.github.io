@@ -17,13 +17,20 @@
         "noImplicitOverride": true,
         "noImplicitReturns": true,
         "noPropertyAccessFromIndexSignature": true,
+        "paths": {
+            "@app/app.component": ["./src/app/app.component"],
+            "@app/app.config": ["./src/app/app.config"],
+            "@app/app.routes": ["./src/app/app.routes"],
+            "@component/*": ["./src/app/component/*"],
+            "@environments/*": ["./src/environments/*"],
+            "@model/*": ["./src/app/model/*"],
+            "@page/*": ["./src/app/page/*"],
+            "@pipe/*": ["./src/app/pipe/*"],
+            "@semantic/*": ["./src/app/semantic/*"],
+            "@service/*": ["./src/app/service/*"]
+        },
         "skipLibCheck": false,
         "strict": true,
         "target": "ES2022"
-    },
-    "references": [
-        {
-            "path": "./src"
-        }
-    ]
+    }
 }
