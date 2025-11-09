@@ -2,16 +2,16 @@ import { ClassInjectionToken, FactoryInjectionToken } from 'lightweight-injectio
 import type { Injector } from 'lightweight-injection/injector';
 import { injectorConfig  } from 'lightweight-injection/injector';
 
-import Metadatas from '@metadata/constant';
-import type { MetadataOptionTypeContext } from '@metadata/context/context';
-import type { FileObject } from '@script/blob/blob';
-import type { FileLoader } from '@script/loader/loader';
+import Metadatas from '@metadata/constant.js';
+import type { MetadataOptionTypeContext } from '@metadata/context/context.js';
+import type { FileObject } from '@script/blob/blob.js';
+import type { FileLoader } from '@script/loader/loader.js';
 import {
     AsyncFileLoader,
     SimpleDirectoryContextLoader,
     SimpleFileContextLoader,
     SyncFileLoader
-} from '@script/loader/loader';
+} from '@script/loader/loader.js';
 
 /**
  * 파일 로더를 반환합니다.

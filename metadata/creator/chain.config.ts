@@ -2,10 +2,10 @@ import { FactoryInjectionToken } from 'lightweight-injection/injection';
 import type { Injector } from 'lightweight-injection/injector';
 import { injectorConfig } from 'lightweight-injection/injector';
 
-import Metadatas from '@metadata/constant';
-import type { MetadataOptionTypeContext } from '@metadata/context/context';
-import { AsyncMetadataCreatorChain, MetadataCreatorChain, SyncMetadataCreatorChain } from '@metadata/creator/chain';
-import type { MetadataContextCreator } from '@metadata/creator/creator';
+import Metadatas from '@metadata/constant.js';
+import type { MetadataOptionTypeContext } from '@metadata/context/context.js';
+import { AsyncMetadataCreatorChain, MetadataCreatorChain, SyncMetadataCreatorChain } from '@metadata/creator/chain.js';
+import type { MetadataContextCreator } from '@metadata/creator/creator.js';
 
 /**
  * 메타데이터 생성기 체인을 반환합니다.

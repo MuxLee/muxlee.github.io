@@ -6,7 +6,7 @@ import {
     LocalComprehensiveCreatorPostProcessor,
     LocalPageCreatorPostProcessor,
     LocalPostCreatorPostProcessor
-} from '@metadata/process/processor';
+} from '@metadata/process/processor.js';
 
 export default injectorConfig(function(injector: Injector) {
     injector.create(new ArrayInjectionToken('METADATA_POST_PROCESSORS', [

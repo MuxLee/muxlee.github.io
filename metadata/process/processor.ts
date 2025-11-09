@@ -6,15 +6,15 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import * as uuid from 'uuid';
 
-import type { MetadataCommand, MetadataCommandParser } from '@metadata/command/command';
-import Metadatas from '@metadata/constant';
-import type { MetadataContext, MetadataContexts, MetadataOptionTypeContext } from '@metadata/context/context';
-import { MetadataGlobalContext } from '@metadata/context/context';
-import type { MetadataCreatorChain } from '@metadata/creator/chain';
-import type { MetadataContentGenerator, MetadataFileGenerator } from '@metadata/generator/generator';
-import { LocalComprehensive, LocalPage, LocalPost } from '@metadata/model/model';
-import type { Processor } from '@script/process/processor';
-import { ObjectDefiners } from '@script/util/util';
+import type { MetadataCommand, MetadataCommandParser } from '@metadata/command/command.js';
+import Metadatas from '@metadata/constant.js';
+import type { MetadataContext, MetadataContexts, MetadataOptionTypeContext } from '@metadata/context/context.js';
+import { MetadataGlobalContext } from '@metadata/context/context.js';
+import type { MetadataCreatorChain } from '@metadata/creator/chain.js';
+import type { MetadataContentGenerator, MetadataFileGenerator } from '@metadata/generator/generator.js';
+import { LocalComprehensive, LocalPage, LocalPost } from '@metadata/model/model.js';
+import type { Processor } from '@script/process/processor.js';
+import { ObjectDefiners } from '@script/util/util.js';
 
 /**
  * 메타데이터 작업 수행 인터페이스
@@ -297,18 +297,8 @@ class MetadataInitializeProcessor implements MetadataProcessor {
      * @returns {Promise<void>}
      */
     async process(injector: Injector): Promise<void> {
-        const directoryPath = fileURLToPath(this.#directoryFullPath);
-        const directoryName = path.dirname(directoryPath);
-
         injector.create(
-            new FactoryInjectionToken(Metadatas.DIRECTORY_NAME, function() {
-                return directoryName;
-            })
-        );
-        injector.create(
-            new FactoryInjectionToken(Metadatas.DIRECTORY_PATH, function() {
-                return directoryPath;
-            })
+            new FactoryInjectionToken(Metadatas.DIRECTORY_PATH, () => this.#directoryFullPath)
         );
     }
 
@@ -330,15 +320,15 @@ class MetadataInjectionProcessor implements MetadataProcessor {
      * @returns {Promise<void>}
      */
     async process(injector: Injector): Promise<void> {
-        const directoryName = injector.get<string>(Metadatas.DIRECTORY_NAME);
-        const fileNames = await fileSystem.promises.readdir(directoryName, {
+        const directoryPath = injector.get<string>(Metadatas.DIRECTORY_PATH);
+        const fileNames = await fileSystem.promises.readdir(directoryPath, {
             encoding: 'utf-8',
             recursive: true
         });
 
         for (const fileName of fileNames) {
-            if (fileName.endsWith('.js')) {
-                const filePath = path.join(directoryName, fileName);
+            if (fileName.endsWith('.config.ts')) {
+                const filePath = path.join(directoryPath, fileName);
                 
                 try {
                     const modules = await import(filePath);

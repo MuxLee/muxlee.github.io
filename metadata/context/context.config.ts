@@ -7,8 +7,8 @@ import {
     LocalPageFileContextFactory,
     LocalPostFileContextFactory,
     MarkdownFileContextFactory
-} from '@metadata/context/context';
-import type { DirectoryContextLoader, FileContextLoader } from '@script/loader/loader';
+} from '@metadata/context/context.js';
+import type { DirectoryContextLoader, FileContextLoader } from '@script/loader/loader.js';
 
 /**
  * 종합 메타데이터 정보 생성기를 반환합니다.

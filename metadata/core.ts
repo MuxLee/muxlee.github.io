@@ -1,3 +1,8 @@
+import {
+    ClassInjectionIdentityParser,
+    InjectionTokenIdetntiyParser,
+    NamedInjectionIdentityParser
+} from 'lightweight-injection/injection';
 import { StoredInjector } from 'lightweight-injection/injector';
 
 import {
@@ -9,8 +14,10 @@ import {
     MetadataInjectionProcessor,
     MetadataLoadProcessor,
     MetadataProcessor
-} from '@metadata/process/processor';
-import type { Constructor } from '@script/util/util';
+} from '@metadata/process/processor.js';
+import type { Constructor } from '@script/util/util.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 /**
  * 기본 설정 작업 수행자 목록
@@ -30,13 +37,19 @@ const defaultConfigures: Constructor<MetadataProcessor>[] = [
 /**
  * 메타데이터 구축 함수
  * 
- * @param {string} directoryPath 수행 폴더 경로
  * @returns {Promise<void | never>}
  */
-function bootstrapMetadata(directoryPath: string): Promise<void | never> {
+function bootstrapMetadata(): Promise<void | never> {
     return new Promise(async function(resolve, reject) {
         try {
+            const directoryPath = path.dirname(
+                fileURLToPath(import.meta.url)
+            );
             const injector = new StoredInjector();
+
+            injector.registerParser(new ClassInjectionIdentityParser());
+            injector.registerParser(new InjectionTokenIdetntiyParser());
+            injector.registerParser(new NamedInjectionIdentityParser());
 
             for (const defaultConfigure of defaultConfigures) {
                 await Reflect.construct(defaultConfigure, [directoryPath]).process(injector);
