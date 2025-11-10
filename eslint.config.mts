@@ -27,6 +27,19 @@ export default defineConfig(
             '@stylistic/quotes': [
                 'error',
                 'single'
+            ],
+            '@typescript-eslint/class-literal-property-style': [
+                'error',
+                [
+                    'fields'
+                ]
+            ],
+            '@typescript-eslint/no-explicit-any': [
+                'error',
+                {
+                    'fixToUnknown': true,
+                    'ignoreRestArgs': true
+                }
             ]
         }
     },
