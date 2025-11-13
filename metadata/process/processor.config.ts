@@ -1,6 +1,5 @@
 import { ArrayInjectionToken } from 'lightweight-injection/injection';
-import type { Injector } from 'lightweight-injection/injector';
-import { injectorConfig } from 'lightweight-injection/injector';
+import { type CreateInjector, injectorConfig } from 'lightweight-injection/injector';
 
 import {
     LocalComprehensiveCreatorPostProcessor,
@@ -8,7 +7,7 @@ import {
     LocalPostCreatorPostProcessor
 } from '@metadata/process/processor.js';
 
-export default injectorConfig(function(injector: Injector) {
+export default injectorConfig(function(injector: CreateInjector) {
     injector.create(new ArrayInjectionToken('METADATA_POST_PROCESSORS', [
         LocalComprehensiveCreatorPostProcessor,
         LocalPageCreatorPostProcessor,

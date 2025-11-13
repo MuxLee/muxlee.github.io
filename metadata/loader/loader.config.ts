@@ -1,13 +1,12 @@
 import { ClassInjectionToken, FactoryInjectionToken } from 'lightweight-injection/injection';
-import type { Injector } from 'lightweight-injection/injector';
-import { injectorConfig  } from 'lightweight-injection/injector';
+import { type CreateInjector, type GetInjector, injectorConfig  } from 'lightweight-injection/injector';
 
 import Metadatas from '@metadata/constant.js';
-import type { MetadataOptionTypeContext } from '@metadata/context/context.js';
-import type { FileObject } from '@script/blob/blob.js';
-import type { FileLoader } from '@script/loader/loader.js';
+import { type MetadataOptionTypeContext } from '@metadata/context/context.js';
+import { type FileObject } from '@script/blob/blob.js';
 import {
     AsyncFileLoader,
+    type FileLoader,
     SimpleDirectoryContextLoader,
     SimpleFileContextLoader,
     SyncFileLoader
@@ -16,10 +15,10 @@ import {
 /**
  * 파일 로더를 반환합니다.
  * 
- * @param {Pick<Injector, 'get'>} injector 의존성 주입자
+ * @param {GetInjector} injector 의존성 주입자
  * @returns {FileLoader<unknown, FileObject | Promise<FileObject>>} 파일 로더
  */
-function _getFileLoader(injector: Pick<Injector, 'get'>): FileLoader<unknown, FileObject | Promise<FileObject>> {
+function _getFileLoader(injector: GetInjector): FileLoader<unknown, FileObject | Promise<FileObject>> {
     const options = injector.get<Record<string, MetadataOptionTypeContext>>(Metadatas.OPTIONS);
 
     if (options['useAsync']) {
@@ -31,7 +30,7 @@ function _getFileLoader(injector: Pick<Injector, 'get'>): FileLoader<unknown, Fi
     return new SyncFileLoader();
 }
 
-export default injectorConfig(function(injector) {
+export default injectorConfig(function(injector: CreateInjector) {
     injector.create(new ClassInjectionToken('DIRECTORY_CONTEXT_LOADER', SimpleDirectoryContextLoader));
     injector.create(new ClassInjectionToken('FILE_CONTEXT_LOADER', SimpleFileContextLoader));
     injector.create(new FactoryInjectionToken('FILE_LOADER', _getFileLoader));

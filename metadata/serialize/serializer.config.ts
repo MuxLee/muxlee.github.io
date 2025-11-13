@@ -1,6 +1,5 @@
 import { ArrayInjectionToken } from 'lightweight-injection/injection';
-import type { Injector } from 'lightweight-injection/injector';
-import { injectorConfig } from 'lightweight-injection/injector';
+import { type CreateInjector, injectorConfig } from 'lightweight-injection/injector';
 
 import Metadatas from '@metadata/constant.js';
 import {
@@ -12,7 +11,7 @@ import {
 } from '@metadata/serialize/serializer.js';
 import { MetaDeserializer, ObjectDeserializer } from '@script/serialize/serializer.js';
 
-export default injectorConfig(function(injector: Injector) {
+export default injectorConfig(function(injector: CreateInjector) {
     injector.create(new ArrayInjectionToken(Metadatas.DESERIALIZERS, [
         MetaDeserializer,
         ObjectDeserializer,
