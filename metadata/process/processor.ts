@@ -1,19 +1,23 @@
-import { Command } from 'commander';
 import fileSystem from 'fs';
+import path from 'path';
+
+import { Command } from 'commander';
 import { injectorConfig, type Injector } from 'lightweight-injection/injector';
 import { FactoryInjectionToken } from 'lightweight-injection/injection';
-import path from 'path';
-import { fileURLToPath } from 'url';
 import * as uuid from 'uuid';
 
-import type { MetadataCommand, MetadataCommandParser } from '@metadata/command/command.js';
+import { type MetadataCommand, MetadataCommandParser } from '@metadata/command/command.js';
 import Metadatas from '@metadata/constant.js';
-import type { MetadataContext, MetadataContexts, MetadataOptionTypeContext } from '@metadata/context/context.js';
-import { MetadataGlobalContext } from '@metadata/context/context.js';
-import type { MetadataCreatorChain } from '@metadata/creator/chain.js';
-import type { MetadataContentGenerator, MetadataFileGenerator } from '@metadata/generator/generator.js';
+import {
+    type MetadataContext,
+    type MetadataContexts,
+    MetadataGlobalContext,
+    type MetadataOptionTypeContext
+} from '@metadata/context/context.js';
+import { type MetadataCreatorChain } from '@metadata/creator/chain.js';
+import { type MetadataContentGenerator, type MetadataFileGenerator } from '@metadata/generator/generator.js';
 import { LocalComprehensive, LocalPage, LocalPost } from '@metadata/model/model.js';
-import type { Processor } from '@script/process/processor.js';
+import { type Processor } from '@script/process/processor.js';
 import { ObjectDefiners } from '@script/util/util.js';
 
 /**
