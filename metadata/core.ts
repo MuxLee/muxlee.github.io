@@ -1,3 +1,6 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 import {
     ClassInjectionIdentityParser,
     InjectionTokenIdetntiyParser,
@@ -15,9 +18,7 @@ import {
     MetadataLoadProcessor,
     MetadataProcessor
 } from '@metadata/process/processor.js';
-import type { Constructor } from '@script/util/util.js';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { type Constructor } from '@script/util/util.js';
 
 /**
  * 기본 설정 작업 수행자 목록
