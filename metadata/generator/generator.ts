@@ -1,13 +1,12 @@
 import fileSystem from 'fs';
-import type { Injector } from 'lightweight-injection/injector';
 import path from 'path';
 
+import type { Injector } from 'lightweight-injection/injector';
+
 import Metadatas from '@metadata/constant.js';
-import type { MetadataContext, MetadataOptionTypeContext } from '@metadata/context/context.js';
-import { MetadataGlobalContext } from '@metadata/context/context.js';
-import type { Comprehensive, Page } from '@metadata/model/model.js';
-import { LocalComprehensive, LocalPage } from '@metadata/model/model.js';
-import type { Serializer } from '@script/serialize/serializer.js';
+import { type MetadataContext, MetadataGlobalContext, type MetadataOptionTypeContext } from '@metadata/context/context.js';
+import { type Comprehensive, LocalComprehensive, LocalPage, type Page } from '@metadata/model/model.js';
+import { type Serializer } from '@script/serialize/serializer.js';
 import { onlyFilePath } from '@script/util/util.js';
 
 /**
