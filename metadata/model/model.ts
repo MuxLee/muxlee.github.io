@@ -1,8 +1,7 @@
 import path from 'path';
 import * as uuid from 'uuid';
 
-import type { FilePath, Nullable } from '@script/util/util.js';
-import { ObjectDefiners, nestedFreeze } from '@script/util/util.js';
+import { type FilePath, type Nullable, ObjectDefiners, nestedFreeze } from '@script/util/util.js';
 
 /**
  * 카테고리 정보를 관리하는 인터페이스
