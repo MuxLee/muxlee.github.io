@@ -1,5 +1,4 @@
-import type { OptionValues } from 'commander';
-import { Command } from 'commander';
+import { Command, type OptionValues } from 'commander';
 
 import { ObjectDefiners } from '@script/util/util.js';
 
