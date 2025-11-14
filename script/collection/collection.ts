@@ -1,5 +1,5 @@
-import type { FileContext } from '@script/context/context';
-import type { Tuple } from '@script/util/util';
+import { type FileContext } from '@script/context/context';
+import { type Tuple } from '@script/util/util';
 
 /**
  * 파일 데이터 쌍 유형
@@ -118,9 +118,9 @@ class TuplePair<T, S extends any[]> implements Pair<T, Tuple<S>> {
      * {@link TuplePair} 클래스의 생성자입니다.
      * 
      * @param {T} object 일반 개체
-     * @param {Tuple<S>} tupleObject 튜플 개체
+     * @param {S} tupleObject 튜플 개체
      */
-    constructor(object: T, tupleObject: Tuple<S>) {
+    constructor(object: T, tupleObject: [...S]) {
         this.#object = object;
         this.#tupleObject = tupleObject;
     }
