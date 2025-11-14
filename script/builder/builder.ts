@@ -1,4 +1,4 @@
-import type { Constructor } from '@script/util/util';
+import { type Constructor } from '@script/util/util';
 
 /**
  * 빌더 인터페이스
