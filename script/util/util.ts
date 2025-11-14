@@ -1,6 +1,5 @@
-import type { FileObject } from '@script/blob/blob';
-import { SimpleFileObject } from '@script/blob/blob';
-import type { FileContext } from '@script/context/context';
+import { type FileObject,  SimpleFileObject } from '@script/blob/blob';
+import { type FileContext } from '@script/context/context';
 
 /**
  * 모든 형태의 배열 유형
