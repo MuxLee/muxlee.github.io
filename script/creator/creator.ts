@@ -1,4 +1,4 @@
-import type { CreatorChain } from '@script/creator/chain';
+import { type CreatorChain } from '@script/creator/chain';
 
 /**
  * 생성기 인터페이스
