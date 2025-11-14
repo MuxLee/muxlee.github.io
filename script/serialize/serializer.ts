@@ -1,6 +1,6 @@
 import jsYaml from 'js-yaml';
 
-import type { StringSerializeStrategy } from '@script/serialize/strategy';
+import { type StringSerializeStrategy } from '@script/serialize/strategy';
 
 /**
  * 역직렬화 인터페이스
