@@ -1,6 +1,6 @@
 import path from 'path';
 
-import type { BlobGrant } from '@script/blob/blob';
+import { type BlobGrant } from '@script/blob/blob';
 
 /**
  * 정보 인터페이스
