@@ -2,10 +2,15 @@ import fileSystem from 'fs';
 import mimeType from 'mime-types';
 import path from 'path';
 
-import type { BlobGrant, FileObject } from '@script/blob/blob.js';
-import { SimpleBlobGrant } from '@script/blob/blob.js';
-import type { Context, DirectoryContext, FileContext, PathContext } from '@script/context/context.js';
-import { SimpleDirectoryContext, SimpleFileContext } from '@script/context/context.js';
+import { type BlobGrant, type FileObject, SimpleBlobGrant } from '@script/blob/blob.js';
+import {
+    type Context,
+    type DirectoryContext,
+    type FileContext,
+    type PathContext,
+    SimpleDirectoryContext,
+    SimpleFileContext
+} from '@script/context/context.js';
 import { FileFactory, getAllPropertyDescriptor } from '@script/util/util.js';
 
 /**
