@@ -125,17 +125,19 @@ class LocalPostCreatorPostProcessor implements MetadataCreatePostProcessor {
                 const fileContext = contexts.second[1];
                 const fileNameWithoutExtensions = path.parse(fileContext.name).name;
 
-                object.folderPath = fileContext.directoryPath;
                 object.originalFileName = fileContext.name;
 
                 if (uuid.validate(fileNameWithoutExtensions)) {
                     object.fileName = fileContext.name;
+                    object.folderPath = fileContext.directoryPath;
                     metadataContext.post = object;
                 }
                 else {
                     const extension = path.extname(fileContext.name);
+                    const options = metadataContext.options;
 
                     object.fileName = uuid.v7() + extension;
+                    object.folderPath = options['postGeneratePath'] as string;
                     metadataContext.addPost = object;
                 }
             }

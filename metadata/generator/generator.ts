@@ -7,7 +7,7 @@ import Metadatas from '@metadata/constant.js';
 import { type MetadataContext, MetadataGlobalContext, type MetadataOptionTypeContext } from '@metadata/context/context.js';
 import { type Comprehensive, LocalComprehensive, LocalPage, type Page } from '@metadata/model/model.js';
 import { type Serializer } from '@script/serialize/serializer.js';
-import { onlyFilePath } from '@script/util/util.js';
+import { type FilePath, onlyFilePath } from '@script/util/util.js';
 
 /**
  * 메타데이터 내용 생성기 인터페이스
@@ -109,7 +109,7 @@ class LocalComprehensiveContentGenerator extends AbstractMetadataContentGenerato
             const latestPost = posts[0];
 
             comprehensive.updateLatestCategories = latestPost.categories;
-            comprehensive.updateLatestPost = onlyFilePath(latestPost);
+            comprehensive.updateLatestPost = latestPost;
             comprehensive.updatePostCount = comprehensive.postCount + postsLength;
 
             for (const post of posts) {
