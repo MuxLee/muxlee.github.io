@@ -192,16 +192,7 @@ class LocalComprehensiveSerializer extends AbstractMetadataSerializer<Comprehens
      * @returns {object} 개체
      */
     override _pickMetadata(comprehensive: Comprehensive): object {
-        return ObjectDefiners.onlyWereEnumerable({}, {
-            categories: global.Object.fromEntries(comprehensive.categories),
-            categoryCount: comprehensive.categoryCount,
-            latestCategories: comprehensive.latestCategories,
-            latestPage: comprehensive.latestPage,
-            latestPost: comprehensive.latestPost,
-            pageCount: comprehensive.pageCount,
-            pages: comprehensive.pages,
-            postCount: comprehensive.postCount
-        });
+        return comprehensive;
     }
 
 }

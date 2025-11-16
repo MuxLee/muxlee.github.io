@@ -632,7 +632,7 @@ class LocalComprehensive implements Comprehensive {
         return ObjectDefiners.onlyWereEnumerable({}, {
             categories: global.Object.fromEntries(this.categories),
             categoryCount: this.categoryCount,
-            latestCategories: this.#latestCategories,
+            latestCategories: Array.from(this.#latestCategories),
             latestPage: this.#latestPage,
             latestPost: this.#latestPost,
             pageCount: this.pageCount,
@@ -1024,7 +1024,7 @@ class LocalPost implements Post {
         this.#originalFileName = post.fileName;
         this.#previousPost = post.previousPost;
         this.#summation = post.summation;
-        this.#thumbnail = post.thumbnail;
+        this.#thumbnail = new LocalThumbnail(post.thumbnail);
         this.#title = post.title;
         this.#writeDateTime = post.writeDateTime;
     }
