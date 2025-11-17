@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderSemantic } from './header-semantic.component';
+import { HeaderSemantic } from './header.component';
 
 describe('HeaderComponent', () => {
     let component: HeaderSemantic;

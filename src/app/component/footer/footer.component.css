@@ -1,0 +1,25 @@
+@reference '#styles.css';
+
+a {
+    @apply
+        duration-[0.25s]
+        ease-in
+        transition-size
+        after:absolute
+        after:bg-black
+        after:duration-[0.25s]
+        after:ease-in
+        after:font-[ChironGoRoundTC]
+        after:font-bold
+        after:left-half
+        after:py-[0.25em]
+        after:px-[0.45em]
+        after:rounded-[0.45em]
+        after:text-white
+        after:text-[0px]
+        after:transform
+        after:transition-font
+        after:translate-x-[-50%]
+        after:translate-y-[0.65em]
+        hover:after:text-size-inherit;
+}
