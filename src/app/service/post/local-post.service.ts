@@ -1,16 +1,19 @@
 import { HttpClient } from '@angular/common/http';
+import { inject } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
+import { type Post } from '@model/post';
 import PostService from '@service/post/post.service';
-import { Comprehensive } from '@model/comprehensive';
 
 export class LocalPostService implements PostService {
 
-    constructor(private httpClient: HttpClient) {}
+    private httpClient: HttpClient = inject(HttpClient);
 
-    getMetadata(): Observable<Comprehensive> {
-        return this.httpClient.get<Comprehensive>('/comprehensive.json');
+    getPost(postFilePath: string): Observable<Post> {
+        postFilePath = postFilePath.replace(/public\//, '');
+
+        return this.httpClient.get<Post>(`/${postFilePath}`);
     }
 
 }
