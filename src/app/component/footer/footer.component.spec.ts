@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FooterSemantic } from './footer-semantic.component';
+import { FooterSemantic } from './footer.component';
 
 describe('FooterComponent', () => {
     let component: FooterSemantic;
