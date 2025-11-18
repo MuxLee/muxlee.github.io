@@ -1,0 +1,20 @@
+<a class="flex gap-x-[5vmin]" [class]="dockDirection()" href="#">
+    <section class="rounded-box overflow-hidden max-pc:rounded-b-none">
+        @let thumbnail = post().thumbnail;
+
+        <img class="display-inherit h-inherit object-contain object-top max-pc:h-[50vmin] max-pc:object-cover max-pc:w-full" [alt]="thumbnail.explanatoryText" [src]="thumbnail.fullPath" />
+    </section>
+    <section class="display-inherit flex-col max-pc:p-10 max-tablet:p-5">
+        <header>
+            <h1 class="font-bold font-[GothicA1] pt-2.5 mobile:text-2xl pc:text-3xl tablet:text-4xl">{{ post().title }}</h1>
+        </header>
+        <div class="mt-5">
+            <p class="font-light font-[GothicA1] leading-[1.5] text-[#353535] tracking-wide mobile:break-all pc:break-keep min-tablet:text-[1.125em]">{{ post().summation | limit: summationLimit() | suffix: summationSuffix() | trim }}</p>
+        </div>
+        <div class="display-inherit content-end-safe flex-wrap gap-x-3 grow self-start-safe max-pc:mt-10">
+            @for (category of post().categories; track category) {
+                <category-button [category]="category"></category-button>
+            }
+        </div>
+    </section>
+</a>
