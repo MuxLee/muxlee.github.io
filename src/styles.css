@@ -5,36 +5,43 @@
     src: url('/fonts/chiron-go-round-tc/ChironGoRoundTC-ExtraLight.ttf') format('truetype');
     font-weight: 200;
 }
+
 @font-face {
     font-family: 'ChironGoRoundTC';
     src: url('/fonts/chiron-go-round-tc/ChironGoRoundTC-Light.ttf') format('truetype');
     font-weight: 300;
 }
+
 @font-face {
     font-family: 'ChironGoRoundTC';
     src: url('/fonts/chiron-go-round-tc/ChironGoRoundTC-Regular.ttf') format('truetype');
     font-weight: 400;
 }
+
 @font-face {
     font-family: 'ChironGoRoundTC';
     src: url('/fonts/chiron-go-round-tc/ChironGoRoundTC-Medium.ttf') format('truetype');
     font-weight: 500;
 }
+
 @font-face {
     font-family: 'ChironGoRoundTC';
     src: url('/fonts/chiron-go-round-tc/ChironGoRoundTC-SemiBold.ttf') format('truetype');
     font-weight: 600;
 }
+
 @font-face {
     font-family: 'ChironGoRoundTC';
     src: url('/fonts/chiron-go-round-tc/ChironGoRoundTC-Bold.ttf') format('truetype');
     font-weight: 700;
 }
+
 @font-face {
     font-family: 'ChironGoRoundTC';
     src: url('/fonts/chiron-go-round-tc/ChironGoRoundTC-ExtraBold.ttf') format('truetype');
     font-weight: 800;
 }
+
 @font-face {
     font-family: 'ChironGoRoundTC';
     src: url('/fonts/chiron-go-round-tc/ChironGoRoundTC-Black.ttf') format('truetype');
@@ -46,16 +53,19 @@
     src: url('/fonts/dancing-script/DancingScript-Regular.ttf') format('truetype');
     font-weight: 400;
 }
+
 @font-face {
     font-family: 'DancingScript';
     src: url('/fonts/dancing-script/DancingScript-Medium.ttf') format('truetype');
     font-weight: 500;
 }
+
 @font-face {
     font-family: 'DancingScript';
     src: url('/fonts/dancing-script/DancingScript-SemiBold.ttf') format('truetype');
     font-weight: 600;
 }
+
 @font-face {
     font-family: 'DancingScript';
     src: url('/fonts/dancing-script/DancingScript-Bold.ttf') format('truetype');
@@ -67,41 +77,49 @@
     src: url('/fonts/gothic-a1/GothicA1-Thin.ttf') format('truetype');
     font-weight: 100;
 }
+
 @font-face {
     font-family: 'GothicA1';
     src: url('/fonts/gothic-a1/GothicA1-ExtraLight.ttf') format('truetype');
     font-weight: 200;
 }
+
 @font-face {
     font-family: 'GothicA1';
     src: url('/fonts/gothic-a1/GothicA1-Light.ttf') format('truetype');
     font-weight: 300;
 }
+
 @font-face {
     font-family: 'GothicA1';
     src: url('/fonts/gothic-a1/GothicA1-Regular.ttf') format('truetype');
     font-weight: 400;
 }
+
 @font-face {
     font-family: 'GothicA1';
     src: url('/fonts/gothic-a1/GothicA1-Medium.ttf') format('truetype');
     font-weight: 500;
 }
+
 @font-face {
     font-family: 'GothicA1';
     src: url('/fonts/gothic-a1/GothicA1-SemiBold.ttf') format('truetype');
     font-weight: 600;
 }
+
 @font-face {
     font-family: 'GothicA1';
     src: url('/fonts/gothic-a1/GothicA1-Bold.ttf') format('truetype');
     font-weight: 700;
 }
+
 @font-face {
     font-family: 'GothicA1';
     src: url('/fonts/gothic-a1/GothicA1-ExtraBol600npm .ttf') format('truetype');
     font-weight: 800;
 }
+
 @font-face {
     font-family: 'GothicA1';
     src: url('/fonts/gothic-a1/GothicA1-Black.ttf') format('truetype');
@@ -114,24 +132,9 @@
         line-height: 1;
     }
 
-    .display-inherit {
-        display: inherit;
-    }
-
-    .h-inherit {
-        height: inherit;
-    }
-
-    .m-hor-auto {
-        @apply ml-auto mr-auto;
-    }
-
-    .top-half {
-        top: 50%;
-    }
-
-    .w-inherit {
-        width: inherit;
+    .container-box {
+        @apply m-hor-auto px-5;
+        max-width: 1280px;
     }
 }
 
@@ -141,6 +144,50 @@
     --breakpoint-tablet: 600px;
 }
 
-.content-container {
-    @apply max-w-[1500px] ml-auto mr-auto;
+@utility display-inherit {
+    display: inherit;
+}
+
+@utility h-inherit {
+    height: inherit;
+}
+
+@utility left-half {
+    left: 50%;
+}
+
+@utility -left-half {
+    left: -50%;
+}
+
+@utility m-hor-auto {
+    @apply ml-auto mr-auto;
+}
+
+@utility rounded-box {
+    @apply rounded-md;
+}
+
+@utility text-size-inherit {
+    font-size: inherit;
+}
+
+@utility top-half {
+    top: 50%;
+}
+
+@utility -top-half {
+    top: -50%;
+}
+
+@utility transition-font {
+    transition-property: font-size;
+}
+
+@utility transition-size {
+    transition-property: height, width;
+}
+
+@utility w-inherit {
+    width: inherit;
 }
