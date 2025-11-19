@@ -3,17 +3,18 @@ import { inject } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { type Post } from '@model/post';
 import PostService from '@service/post/post.service';
 
-export class LocalPostService implements PostService {
+export class LocalPostService implements PostService<string> {
 
     private httpClient: HttpClient = inject(HttpClient);
 
-    getPost(postFilePath: string): Observable<Post> {
+    getPost(postFilePath: string): Observable<string> {
         postFilePath = postFilePath.replace(/public\//, '');
 
-        return this.httpClient.get<Post>(`/${postFilePath}`);
+        return this.httpClient.get(`/${postFilePath}`, {
+            responseType: 'text'
+        });
     }
 
 }
