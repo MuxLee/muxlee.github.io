@@ -1,20 +1,32 @@
-<semantic-header></semantic-header>
-<main>
-    <section id="introduce" class="max-pc:p-[40px] pc:px-10 pc:py-20">
-        <article class="content-container flex">
-            <div class="mobile:flex-2 pc:flex-1 tablet:flex-2">
-                <p class="font-thin font-[GothicA1] text-center text-white max-pc:text-[11vmin] pc:text-[11em]">Backend</p>
-                <p class="font-black font-[GothicA1] text-center text-white max-pc:text-[5.5vmin] pc:text-[5em]">Developer</p>
+<layout-semantic>
+    <section id="introduce" class="bg-[linear-gradient(90deg,#202020_50%,#464646)] not-pc:p-[40px] pc:px-20 pc:py-20">
+        <article class="flex gap-x-10 items-center justify-center m-hor-auto">
+            <div>
+                <p class="font-thin font-[GothicA1] text-center text-white mobile:text-[11vmin] tablet:text-[12vmin] pc:text-[11em]">Backend</p>
+                <p class="font-black font-[GothicA1] text-center text-white mobile:text-[5.5vmin] tablet:text-[6.5vmin] pc:text-[5em]">Developer</p>
             </div>
-            <div class="max-pc:self-center-safe mobile:flex-1 pc:flex-2 pc:self-end-safe tablet:flex-1">
-                <p class="font-bold font-[DancingScript] indent-2.5 max-pc:text-center max-pc:text-[11.5vmin] text-white pc:text-[15.5em]" dir="rtl">Mux </p>
+            <div>
+                <p class="font-bold font-[DancingScript] indent-2.5 text-white text-[15.5vmin mobile:text-[11.5vmin] tablet:text-[12.5vmin] pc:text-[15.5em]" dir="rtl">Mux </p>
             </div>
         </article>
     </section>
-    <section class="min-h-[500px] py-20 px-10">
-        <article class="content-container">
-            <blank-content title="아직 작성된 게시글이 없어요!" content="주인장이 게으른가 봐요"></blank-content>
-        </article>
+    <section class="container-box min-h-[500px] mobile:p-5 min-tablet:p-10">
+        <header class="mt-5">
+            <!-- <h1 class="font-bold font-[GothicA1] text-4xl">최신 게시글</h1> -->
+        </header>
+        @let metadata = metadata$ | async;
+
+        @if (metadata && metadata.latestPost) {
+            @let latestPost = metadata.latestPost;
+
+            <div class="mt-10">
+                <post-card [post]="latestPost" />
+            </div>
+        }
+        @else {
+            <article class="m-hor-auto">
+                <blank-content title="아직 작성된 게시글이 없어요!" content="주인장이 게으른가 봐요"></blank-content>
+            </article>
+        }
     </section>
-</main>
-<semantic-footer></semantic-footer>
+</layout-semantic>
