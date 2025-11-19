@@ -1,8 +1,11 @@
 import { InjectionToken, makeEnvironmentProviders, Provider } from '@angular/core';
+
 import { environment } from '@environments/environment';
 
 type Constructor<T> = {
+
     new (...args: any[]): T;
+    
 };
 
 interface ServiceOption<T> {
@@ -23,9 +26,9 @@ function registerService<T>(option: ServiceOption<T>) {
     const providers = environmentProvider.get(option.environment) || [];
     const dependencies = option.deps || [];
     const provider: Provider = {
+        deps: dependencies,
         provide: option.token,
-        useClass: option.useClass,
-        deps: dependencies
+        useClass: option.useClass
     };
 
     providers.push(provider);
@@ -39,6 +42,6 @@ function provideService()  {
 }
 
 export {
-    registerService,
-    provideService
-}
+    provideService, registerService
+};
+
