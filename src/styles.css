@@ -133,8 +133,11 @@
     }
 
     .container-box {
-        @apply m-hor-auto px-5;
-        max-width: 1280px;
+        @apply m-hor-auto max-w-[1280px] px-5;
+    }
+
+    .content-box {
+        @apply m-hor-auto max-w-[960px] px-5;
     }
 }
 
@@ -152,6 +155,10 @@
     height: inherit;
 }
 
+@utility justify-inherit {
+    justify-content: inherit;
+}
+
 @utility left-half {
     left: 50%;
 }
@@ -166,6 +173,10 @@
 
 @utility rounded-box {
     @apply rounded-md;
+}
+
+@utility size-inherit {
+    @apply h-inherit w-inherit;
 }
 
 @utility text-size-inherit {
