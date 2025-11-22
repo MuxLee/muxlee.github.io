@@ -24,16 +24,83 @@
                             {
                                 "glob": "**/*",
                                 "input": "public"
-                            },
-                            {
-                                "glob": "**/*",
-                                "input": "content"
                             }
                         ],
                         "styles": [
-                            "src/styles.css"
+                            "src/styles.css",
+                            {
+                                "bundleName": "markdown",
+                                "inject": false,
+                                "input": "src/markdown.css"
+                            }
                         ],
-                        "scripts": [],
+                        "scripts": [
+                            {
+                                "bundleName": "katex",
+                                "inject": false,
+                                "input": "node_modules/katex/dist/contrib/auto-render.min.js"
+                            },
+                            {
+                                "bundleName": "katex",
+                                "inject": false,
+                                "input": "node_modules/katex/dist/katex.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/prism.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-css.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-java.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-javascript.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-json.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-latex.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-markdown.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-mermaid.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-typescript.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-vim.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-yaml.min.js"
+                            }
+                        ],
                         "prerender": false,
                         "ssr": false
                     },
@@ -123,9 +190,80 @@
                             }
                         ],
                         "styles": [
-                            "src/styles.css"
+                            "src/styles.css",
+                            {
+                                "bundleName": "markdown",
+                                "inject": false,
+                                "input": "src/markdown.css"
+                            }
                         ],
-                        "scripts": []
+                        "scripts": [
+                            {
+                                "bundleName": "katex",
+                                "inject": false,
+                                "input": "node_modules/katex/dist/contrib/auto-render.min.js"
+                            },
+                            {
+                                "bundleName": "katex",
+                                "inject": false,
+                                "input": "node_modules/katex/dist/katex.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/prism.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-css.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-java.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-javascript.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-json.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-latex.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-markdown.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-mermaid.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-typescript.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-vim.min.js"
+                            },
+                            {
+                                "bundleName": "prism",
+                                "inject": false,
+                                "input": "node_modules/prismjs/components/prism-yaml.min.js"
+                            }
+                        ]
                     }
                 }
             }
