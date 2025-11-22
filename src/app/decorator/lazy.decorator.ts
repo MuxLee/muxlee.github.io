@@ -106,21 +106,22 @@ class LazyStyleHook implements OnDestroy, OnInit {
 const Lazy: LazyDecorator = function(options: Lazy) {
     return function<T extends Constructor>(constructor: T) {
         const { hooks } = options;
-        const propertyNames = Object.getOwnPropertyNames(constructor.prototype);
 
-        for (const propertyName of propertyNames) {
-            if (propertyName !== 'constructor') {
-                for (const hook of hooks) {
-                    const prototypeOf = Object.getPrototypeOf(hook);
+        for (const hook of hooks) {
+            const prototype = Object.getPrototypeOf(hook);
+            const prototypeNames = Object.getOwnPropertyNames(prototype);
 
-                    if (propertyName in prototypeOf) {
-                        const method: Function = constructor.prototype[propertyName];
-                        const lazyMethod: Function = hook[propertyName];
+            for (const prototypeName of prototypeNames) {
+                if (prototypeName !== 'constructor') {
+                    const lazyMethod: Function = hook[prototypeName];
+                    const method: Function = constructor.prototype[prototypeName];
 
-                        constructor.prototype[propertyName] = function(this: typeof constructor.prototype, ...args: any[]) {
+                    constructor.prototype[prototypeName] = function(this: typeof constructor.prototype, ...args: any[]) {
+                        if (method) {
                             method.call(this, ...args);
-                            lazyMethod.call(hook, ...args);
                         }
+
+                        lazyMethod.call(hook, ...args);
                     }
                 }
             }
