@@ -1,0 +1,37 @@
+@reference '#styles.css';
+
+:host {
+    @apply inline-block;
+}
+
+svg {
+    @apply animate-[2s_both_infinite_svgSpinner_linear];
+
+    & circle {
+        @apply animate-[1.8s_both_infinite_circleSpinner_ease-in-out];
+    }
+}
+
+@keyframes svgSpinner {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes circleSpinner {
+    0%, 25% {
+        stroke-dashoffset: 280;
+        transform: rotate(0);
+    }
+    50%, 75% {
+        stroke-dashoffset: 60;
+        transform: rotate(45deg);
+    }
+    100% {
+        stroke-dashoffset: 280;
+        transform: rotate(360deg);
+    }
+}
