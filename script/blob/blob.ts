@@ -1,4 +1,4 @@
-import { Builder } from '@script/builder/builder';
+import type { Builder } from '@script/builder/builder';
 
 /**
  * 대규모 이진 데이터 권한 인터페이스
