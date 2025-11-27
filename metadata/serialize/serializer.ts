@@ -1,8 +1,8 @@
-import { LocalComprehensive, LocalPage, LocalPost } from '@metadata/model/model';
-import type { Comprehensive, Page, Post } from '@metadata/model/model';
-import type { Deserializer, Serializer } from '@script/serialize/serializer';
-import type { Class, PrimitiveType, Undefinable } from '@script/util/util';
-import { ObjectDefiners } from '@script/util/util';
+import { LocalComprehensive, LocalPage, LocalPost } from '@metadata/model/model.js';
+import type { Comprehensive, Page, Post } from '@metadata/model/model.js';
+import type { Deserializer, Serializer } from '@script/serialize/serializer.js';
+import type { Class, PrimitiveType, Undefinable } from '@script/util/util.js';
+import { ObjectDefiners } from '@script/util/util.js';
 
 /**
  * 메타데이터 역직렬화 클래스

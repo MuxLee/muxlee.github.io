@@ -1,5 +1,5 @@
-import type { MetadataContext } from '@metadata/context/context';
-import type { MetadataCreator } from '@metadata/creator/creator';
+import type { MetadataContext } from '@metadata/context/context.js';
+import type { MetadataCreator } from '@metadata/creator/creator.js';
 
 /**
  * 메타데이터 생성기 체인 인터페이스

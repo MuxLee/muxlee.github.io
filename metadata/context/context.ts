@@ -1,11 +1,11 @@
 import path from 'path';
 
-import { LocalComprehensive, LocalPage, LocalPost } from '@metadata/model/model';
-import type { Pair } from '@script/collection/collection';
-import type { Context, FileContext, PathContext } from '@script/context/context';
-import { EmptyPathContext, SimplePathContext } from '@script/context/context';
-import type { DirectoryContextLoader, FileContextLoader } from '@script/loader/loader';
-import type { Nullable, Tuple } from '@script/util/util';
+import { LocalComprehensive, LocalPage, LocalPost } from '@metadata/model/model.js';
+import type { Pair } from '@script/collection/collection.js';
+import type { Context, FileContext, PathContext } from '@script/context/context.js';
+import { EmptyPathContext, SimplePathContext } from '@script/context/context.js';
+import type { DirectoryContextLoader, FileContextLoader } from '@script/loader/loader.js';
+import type { Nullable, Tuple } from '@script/util/util.js';
 
 /**
  * 메타데이터 정보 인터페이스
