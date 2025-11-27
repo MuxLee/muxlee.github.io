@@ -13,7 +13,7 @@ import { ObjectDefiners } from '@script/util/util';
  * @author Mux
  * @version 1.0.0
  */
-class _MetadataDeserializer<R> implements Deserializer<object, R> {
+abstract class AbstractMetadataDeserializer<R> implements Deserializer<object, R> {
 
     /**
      * 개체를 메타데이터로 역직렬화하여 반환합니다.
@@ -74,7 +74,7 @@ class _MetadataDeserializer<R> implements Deserializer<object, R> {
  * @author Mux
  * @version 1.0.0
  */
-class _MetadataSerializer<T> implements Serializer<T, string> {
+abstract class AbstractMetadataSerializer<T> implements Serializer<T, string> {
 
     /**
      * 메타데이터를 문자열로 직렬화하여 반환합니다.
@@ -115,11 +115,11 @@ class _MetadataSerializer<T> implements Serializer<T, string> {
 /**
  * 정보 메타데이터 역직렬화 클래스
  *
- * @extends {_MetadataDeserializer<Comprehensive>}
+ * @extends {AbstractMetadataDeserializer<Comprehensive>}
  * @author Mux
  * @version 1.0.0
  */
-class LocalComprehensiveDeserializer extends _MetadataDeserializer<Comprehensive> {
+class LocalComprehensiveDeserializer extends AbstractMetadataDeserializer<Comprehensive> {
 
     /**
      * 정보 메타데이터로 역직렬화하여 반환합니다.
@@ -155,11 +155,11 @@ class LocalComprehensiveDeserializer extends _MetadataDeserializer<Comprehensive
 /**
  * 정보 메타데이터 직렬화 클래스
  *
- * @extends {_MetadataSerializer<Comprehensive>}
+ * @extends {AbstractMetadataSerializer<Comprehensive>}
  * @author Mux
  * @version 1.0.0
  */
-class LocalComprehensiveSerializer extends _MetadataSerializer<Comprehensive> {
+class LocalComprehensiveSerializer extends AbstractMetadataSerializer<Comprehensive> {
 
     /**
      * 개체가 정보 메타데이터 유형이며, 직렬화 가능한지 판별합니다.
@@ -199,11 +199,11 @@ class LocalComprehensiveSerializer extends _MetadataSerializer<Comprehensive> {
 /**
  * 페이지 메타데이터 역직렬화 클래스
  *
- * @extends {_MetadataDeserializer<Page>}
+ * @extends {AbstractMetadataDeserializer<Page>}
  * @author Mux
  * @version 1.0.0
  */
-class LocalPageDeserializer extends _MetadataDeserializer<Page> {
+class LocalPageDeserializer extends AbstractMetadataDeserializer<Page> {
 
     /**
      * 페이지 메타데이터로 역직렬화하여 반환합니다.
@@ -236,11 +236,11 @@ class LocalPageDeserializer extends _MetadataDeserializer<Page> {
 /**
  * 페이지 메타데이터 직렬화 클래스
  *
- * @extends {_MetadataSerializer<Page>}
+ * @extends {AbstractMetadataSerializer<Page>}
  * @author Mux
  * @version 1.0.0
  */
-class LocalPageSerializer extends _MetadataSerializer<Page> {
+class LocalPageSerializer extends AbstractMetadataSerializer<Page> {
 
     /**
      * 개체가 페이지 메타데이터 유형이며, 직렬화 가능한지 판별합니다.
@@ -279,11 +279,11 @@ class LocalPageSerializer extends _MetadataSerializer<Page> {
 /**
  * 게시글 메타데이터 역직렬화 클래스
  *
- * @extends {_MetadataDeserializer<Post>}
+ * @extends {AbstractMetadataDeserializer<Post>}
  * @author Mux
  * @version 1.0.0
  */
-class LocalPostDeserializer extends _MetadataDeserializer<Post> {
+class LocalPostDeserializer extends AbstractMetadataDeserializer<Post> {
 
     /**
      * 게시글 메타데이터로 역직렬화하여 반환합니다.
@@ -318,11 +318,11 @@ class LocalPostDeserializer extends _MetadataDeserializer<Post> {
 /**
  * 게시글 메타데이터 직렬화 클래스
  *
- * @extends {_MetadataSerializer<Post>}
+ * @extends {AbstractMetadataSerializer<Post>}
  * @author Mux
  * @version 1.0.0
  */
-class LocalPostSerializer extends _MetadataSerializer<Post> {
+class LocalPostSerializer extends AbstractMetadataSerializer<Post> {
 
     /**
      * 개체가 게시글 메타데이터 유형이며, 직렬화 가능한지 판별합니다.

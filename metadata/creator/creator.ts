@@ -1,6 +1,8 @@
 import type { MetadataContext, MetadataContextFactory } from '@metadata/context/context';
 import type { MetadataCreatorChain } from '@metadata/creator/chain';
-import { FileDataPair, SimplePair, TuplePair } from '@script/collection/collection';
+import type { MetadataCreatePostProcessor } from '@metadata/process/processor';
+import type { FileDataPair } from '@script/collection/collection';
+import { SimplePair, TuplePair } from '@script/collection/collection';
 import type { FileContext } from '@script/context/context';
 import type { FileLoader } from '@script/loader/loader';
 import type { Deserializer } from '@script/serialize/serializer';
