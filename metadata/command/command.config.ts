@@ -1,7 +1,6 @@
 import { Command } from 'commander';
 import { ArrayInjectionToken } from 'lightweight-injection/injection';
-import type { Injector } from 'lightweight-injection/injector';
-import { injectorConfig } from 'lightweight-injection/injector';
+import { type CreateInjector, injectorConfig } from 'lightweight-injection/injector';
 
 import {
     LocalComprehensiveCommand,
@@ -15,7 +14,7 @@ import {
 } from '@metadata/command/command.js';
 import Metadatas from '@metadata/constant.js';
 
-export default injectorConfig(function(injector: Injector) {
+export default injectorConfig(function(injector: CreateInjector) {
     injector.create(Command);
     injector.create(new ArrayInjectionToken(Metadatas.COMMAND_PARSERS, [
         LocalComprehensiveCommandParser,
