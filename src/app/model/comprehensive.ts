@@ -69,6 +69,8 @@ interface Comprehensive {
 
 }
 
+type ReadonlyComprehensive = Readonly<Comprehensive>;
+
 export type {
-    Comprehensive
+    ReadonlyComprehensive as Comprehensive
 };
