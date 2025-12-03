@@ -1,15 +1,13 @@
-import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { Comprehensive } from '@model/comprehensive';
+
+import { type Post } from '@model/post';
 import PostService from '@service/post/post.service';
 
 export class GlobalPostService implements PostService {
 
-    constructor(private httpClient: HttpClient) {}
-
-    getMetadata(): Observable<Comprehensive> {
-        return new Observable(() => {})
+    getPost(postId: string): Observable<Post> {
+        return new Observable(() => {});
     }
 
 }
