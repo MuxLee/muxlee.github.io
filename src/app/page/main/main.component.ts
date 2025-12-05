@@ -1,35 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
 import { BlankContentComponent } from '@component/blank-content/blank-content.component';
-import { Comprehensive } from '@model/comprehensive';
-import { FooterSemantic } from '@semantic/footer/footer-semantic.component';
-import { HeaderSemantic } from '@semantic/header/header-semantic.component';
-import PostService from '@service/post/post.service';
+import { LayoutComponent } from '@component/layout/layout.component';
+import { PostCardComponent, type ThumbnailDock } from '@component/post-card/post-card.component';
+import { type Comprehensive } from '@model/comprehensive';
+import ComprehensiveService from '@service/comprehensive/comprehensive.service';
 
 @Component({
     selector: 'page-main',
     imports: [
+        AsyncPipe,
         BlankContentComponent,
-        FooterSemantic,
-        HeaderSemantic
+        LayoutComponent,
+        PostCardComponent
     ],
-    templateUrl: './main.component.html',
-    styleUrl: './main.component.css'
+    templateUrl: './main.component.html'
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
 
-    metadata: Observable<Comprehensive>;
+    protected metadata$: Observable<Comprehensive>;
+    private comprehensiveSerivce = inject(ComprehensiveService);
 
-    constructor(private postService: PostService) {
-        this.metadata = this.postService.getMetadata();
-    }
-
-    ngOnInit() {
-        this.metadata.subscribe(metadata => {
-            console.log(metadata);
-        });
+    constructor() {
+        this.metadata$ = this.comprehensiveSerivce.getComprehensive();
     }
 
 }
