@@ -1,4 +1,4 @@
-<a class="flex gap-x-[5vmin]" [class]="dockDirection()" href="#">
+<a routerLink="/post" [queryParams]="{'postId': postIdentity()}" class="flex gap-x-[5vmin]" [class]="dockDirection()" href="#">
     <section class="rounded-box overflow-hidden max-pc:rounded-b-none">
         @let thumbnail = post().thumbnail;
 
