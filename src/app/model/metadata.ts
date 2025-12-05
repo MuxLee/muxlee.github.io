@@ -1,5 +1,8 @@
 /**
- * 파일 정보를 제공하는 인터페이스입니다.
+ * 파일 정보를 제공하는 인터페이스
+ * 
+ * @author Mux
+ * @version 1.0.0
  */
 interface FilePath {
 
@@ -27,73 +30,77 @@ interface FilePath {
 }
 
 /**
+ * 고유값을 제공하는 인터페이스
+ * 
+ * @author Mux
+ * @version 1.0.0
+ */
+interface Identity<T> {
+
+    /**
+     * 고유값을 반환합니다.
+     * 
+     * @returns {T} 고유값
+     */
+    get identity(): T;
+
+}
+
+/**
  * <code>YYYY-MM-DD</code>형태의 ISO 날짜 정보
+ * 
+ * @author Mux
+ * @version 1.0.0
  */
 type ISODate = `${string}-${string}-${string}`;
 
 /**
  * <code>YYYY-MM-DD HH:mm:ss.SSS</code> 형태의 ISO 날짜 및 시간 정보
+ * 
+ * @author Mux
+ * @version 1.0.0
  */
 type ISODateTime = `${ISODate} ${ISOTime}`;
 
 /**
  * <code>HH:mm:ss.SSS</code> 형태의 ISO 시간 정보
+ * 
+ * @author Mux
+ * @version 1.0.0
  */
 type ISOTime = `${string}:${string}:${string}.${string}`;
 
 /**
- * JSON 직렬화 인터페이스
- */
-interface JSONSerializer<T> {
-
-    /**
-     * JSON 형태로 직렬화하여 반환합니다.
-     *
-     * @ignore {@link JSON#stringify}에서 자동으로 호출}
-     * @template T
-     * @returns {ReadonlyNested<T>} JSON 데이터
-     */
-    toJSON(): ReadonlyNested<T>
-
-}
-
-/**
  * 대상 타입 또는 <code>null</code> 타입
+ * 
+ * @author Mux
+ * @version 1.0.0
  */
 type Optional<T> = T | null;
 
 /**
  * 읽기 전용의 {@link FilePath}
+ * 
+ * @author Mux
+ * @version 1.0.0
  */
 type ReadonlyFilePath = Readonly<FilePath>;
 
 /**
  * 상위 및 자식 요소에 대한 읽기 전용 타입
+ * 
+ * @author Mux
+ * @version 1.0.0
  */
 type ReadonlyNested<T> = {
     readonly [key in keyof T]: T[key] extends object ? ReadonlyNested<T[key]> : T[key];
 };
 
-interface Serializer<T, R> {
-
-    /**
-     * {@link T}타입의 데이터를 받아 {@link R}타입으로 변환하여 반환합니다.
-     *
-     * @template {T} T 입력 데이터 타입
-     * @template {R} R 반환 데이터 타입
-     * @param {T} target 변환 대상 데이터
-     * @returns {R} 변환 데이터
-     */
-    serialize(target: T): R;
-
-}
-
 export type {
+    Identity,
     ISODate,
     ISODateTime,
     ISOTime,
-    JSONSerializer,
     Optional,
-    ReadonlyFilePath as FilePath,
-    Serializer
+    ReadonlyFilePath as FilePath
 };
