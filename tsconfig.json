@@ -26,7 +26,7 @@
             "@model/*": ["./src/app/model/*"],
             "@page/*": ["./src/app/page/*"],
             "@pipe/*": ["./src/app/pipe/*"],
-            "@semantic/*": ["./src/app/semantic/*"],
+            "@resolver/*": ["./src/app/resolver/*"],
             "@service/*": ["./src/app/service/*"]
         },
         "skipLibCheck": false,
