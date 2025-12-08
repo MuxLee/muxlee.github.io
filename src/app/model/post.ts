@@ -14,6 +14,13 @@ interface Post extends FilePath {
     get categories(): Set<string>;
 
     /**
+     * 게시글 내용을 반환합니다.
+     * 
+     * @returns {string} 게시글 내용
+     */
+    get content(): string;
+
+    /**
      * 게시글을 요약한 내용을 반환합니다.
      *
      * @returns {string} 게시글 요약 내용

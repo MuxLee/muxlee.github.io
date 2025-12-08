@@ -7,18 +7,18 @@ import { GlobalPostService } from '@service/post/global-post.service';
 import { LocalPostService } from '@service/post/local-post.service';
 import { registerService } from '@service/service.provider';
 
-export default abstract class PostService<T> {
+export default abstract class PostService {
 
-    abstract getPost(postIdentity: string): Observable<T>;
+    abstract getPost(postIdentity: string): Observable<Post>;
 
 }
 
-registerService<PostService<Post>>({
+registerService<PostService>({
     environment: 'global',
     token: PostService,
     useClass: GlobalPostService
 });
-registerService<PostService<string>>({
+registerService<PostService>({
     deps: [HttpClient],
     environment: 'local',
     token: PostService,
