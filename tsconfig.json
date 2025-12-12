@@ -22,6 +22,7 @@
             "@app/app.config": ["./src/app/app.config"],
             "@app/app.routes": ["./src/app/app.routes"],
             "@component/*": ["./src/app/component/*"],
+            "@decorator/*": ["./src/app/decorator/*"],
             "@environments/*": ["./src/environments/*"],
             "@model/*": ["./src/app/model/*"],
             "@page/*": ["./src/app/page/*"],
