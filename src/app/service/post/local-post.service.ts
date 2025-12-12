@@ -18,12 +18,17 @@ export class LocalPostService implements PostService {
         return this.httpClient.get(`/${postFilePath}`, {
             responseType: 'text'
         }).pipe(
-            map(markdown => {
-                const metadata = frontMatter<Post>(markdown).attributes;
+            map(content => {
+                const markdown = frontMatter<Post>(content);
+                const metadata = markdown.attributes;
 
                 Object.defineProperty(metadata, 'content', {
                     enumerable: true,
-                    value: markdown
+                    value: markdown.body
+                });
+                Object.defineProperty(metadata.thumbnail, 'fullPath', {
+                    enumerable: true,
+                    value: metadata.thumbnail.folderPath + '/' + metadata.thumbnail.fileName
                 });
 
                 return metadata;
