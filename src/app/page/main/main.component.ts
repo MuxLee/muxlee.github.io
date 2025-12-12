@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { BlankContentComponent } from '@component/blank-content/blank-content.component';
 import { LayoutComponent } from '@component/layout/layout.component';
-import { PostCardComponent, type ThumbnailDock } from '@component/post-card/post-card.component';
+import { PostCardComponent } from '@component/post-card/post-card.component';
 import { type Comprehensive } from '@model/comprehensive';
 import ComprehensiveService from '@service/comprehensive/comprehensive.service';
 
